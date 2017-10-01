@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<h1>bing's diary</h1>
+    <p> title: </p>
+    <input id="title"></input>
+    <p> content: </p>
+    <textarea id="content" cols="30" rows="10"></textarea>
+    <p><button id="submit"> submit</button></p>
+    <p>previous content: </p>
+    <div id="history"> </div>
+    <script type="text/javascript">
+    	var submit=document.getElementById('submit');
+    	submit.onclick=function(){
+    		var title_element=document.getElementById('title');
+    		var title=title_element.value;
+    		var content_element=document.getElementById('content');
+    		var content = content_element.value;
+    		var history_element = document.getElementById('history');
+    		var history = history_element.innerHTML;
+    		history = history + '<p> title: ' + title + '</p>';
+    		history = history + '<p> content: '+ content + '</p>';
+    		history = history + '<hr>';
+    		alert(history);
+    		history_element.innerHTML=history;
+    	};
+    </script>
+</body>
+</html>
